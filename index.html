@@ -7,18 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;900&family=Noto+Sans+KR:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:      #f7f8fa;
+  --bg:      #eef2f7;
   --surface: #ffffff;
-  --navy:    #0f2748;
+  --navy:    #1a3a6b;
   --blue:    #1655a2;
   --accent:  #0ea5e9;
   --gold:    #d97706;
   --red:     #ff0000;
-  --text:    #1e293b;
-  --sub:     #64748b;
-  --border:  #e2e8f0;
-  --tag-bg:  #eff6ff;
-  --tag-col: #1655a2;
+  --text:    #0f172a;
+  --sub:     #475569;
+  --border:  #cbd5e1;
+  --tag-bg:  #dbeafe;
+  --tag-col: #1e40af;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -28,25 +28,25 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 /* ── TOPBAR ── */
 .topbar {
-  background: var(--navy);
-  color: #94a3b8;
+  background: #1e4080;
+  color: #bfdbfe;
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 2px;
   text-align: center;
-  padding: 10px 24px;
+  padding: 11px 24px;
 }
-.topbar span { color: var(--accent); }
+.topbar span { color: #7dd3fc; font-weight: 700; }
 
 /* ── HERO ── */
 .hero {
-  background: var(--navy);
+  background: linear-gradient(135deg, #1e4080 0%, #2a5298 50%, #1a6fc4 100%);
   position: relative;
   overflow: hidden;
   padding: 60px 24px 56px;
@@ -58,15 +58,15 @@ body {
   right: -120px; top: -120px;
   width: 480px; height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
 }
 
 .hero::after {
   content: '';
   position: absolute;
   left: 0; bottom: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(14,165,233,0.4), transparent);
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(14,165,233,0.6), transparent);
 }
 
 .hero-inner {
@@ -121,11 +121,12 @@ body {
 
 .hero-name {
   font-family: 'Noto Serif KR', serif;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   font-weight: 900;
   color: #ffffff;
   letter-spacing: -1px;
   line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .hero-name em {
@@ -135,21 +136,21 @@ body {
 
 .hero-en {
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: #64748b;
+  font-size: 13px;
+  color: #bfdbfe;
   letter-spacing: 3px;
   margin-top: 6px;
 }
 
 .hero-tagline {
-  margin-top: 16px;
-  font-size: 14px;
-  color: #94a3b8;
-  line-height: 1.7;
+  margin-top: 18px;
+  font-size: 17px;
+  color: #e2eeff;
+  line-height: 1.75;
   max-width: 480px;
 }
 
-.hero-tagline strong { color: #e8a020; }
+.hero-tagline strong { color: #fcd34d; font-size: 18px; }
 
 .hero-roles {
   display: flex;
@@ -159,13 +160,13 @@ body {
 }
 
 .role-chip {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: #cbd5e1;
-  font-size: 12px;
-  padding: 5px 14px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #ffffff;
+  font-size: 13px;
+  padding: 6px 16px;
   border-radius: 4px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .role-chip.primary {
@@ -178,33 +179,34 @@ body {
   display: flex;
   gap: 0;
   margin-top: 32px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 8px;
   overflow: hidden;
   max-width: 480px;
+  background: rgba(255,255,255,0.1);
 }
 
 .hstat {
   flex: 1;
-  padding: 14px 16px;
-  border-right: 1px solid rgba(255,255,255,0.08);
+  padding: 16px 16px;
+  border-right: 1px solid rgba(255,255,255,0.2);
   text-align: center;
 }
 .hstat:last-child { border-right: none; }
 
 .hstat-num {
   font-family: 'DM Mono', monospace;
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #7dd3fc;
   line-height: 1;
 }
 
 .hstat-label {
-  font-size: 10px;
-  color: #64748b;
+  font-size: 11px;
+  color: #bfdbfe;
   letter-spacing: 0.5px;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 /* ── MAIN GRID ── */
@@ -242,22 +244,22 @@ body {
 
 .card-title {
   font-family: 'Noto Serif KR', serif;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--navy);
   margin-bottom: 14px;
 }
 
 /* ── HIGHLIGHT BOX ── */
 .highlight-box {
-  background: #eff6ff;
-  border-left: 3px solid var(--blue);
+  background: #dbeafe;
+  border-left: 4px solid var(--blue);
   border-radius: 0 6px 6px 0;
-  padding: 14px 18px;
+  padding: 16px 20px;
   margin-bottom: 18px;
-  font-size: 14px;
-  color: var(--navy);
-  line-height: 1.75;
+  font-size: 15px;
+  color: #1e3a5f;
+  line-height: 1.8;
 }
 
 /* ── CERTIFICATION ── */
@@ -356,14 +358,14 @@ body {
 }
 
 .tl-role {
-  font-size: 0.93rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .tl-org {
-  font-size: 0.81rem;
+  font-size: 0.88rem;
   color: var(--sub);
 }
 
@@ -585,22 +587,25 @@ body {
 .tag {
   background: var(--tag-bg);
   color: var(--tag-col);
-  border: 1px solid #bfdbfe;
-  font-size: 12px;
-  padding: 3px 10px;
+  border: 1px solid #93c5fd;
+  font-size: 13px;
+  padding: 4px 12px;
   border-radius: 4px;
+  font-weight: 500;
 }
 
 .tag.dark {
-  background: #f1f5f9;
-  color: #334155;
-  border-color: #e2e8f0;
+  background: #e2e8f0;
+  color: #1e293b;
+  border-color: #cbd5e1;
+  font-size: 13px;
 }
 
 .tag.gold {
-  background: #fffbeb;
-  color: var(--gold);
-  border-color: #fde68a;
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fcd34d;
+  font-size: 13px;
 }
 
 /* ── CONTACT SIDEBAR ── */
